@@ -2,11 +2,11 @@ package com.questionAnswer.module;
 
 import java.util.Objects;
 
-public class QuestionAnswer {
+public class Question {
     private String question;
     private String answer;
 
-    public QuestionAnswer(String question, String answer) {
+    public Question(String question, String answer) {
         this.question = question;
         this.answer = answer;
     }
@@ -31,12 +31,20 @@ public class QuestionAnswer {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        QuestionAnswer that = (QuestionAnswer) o;
+        Question that = (Question) o;
         return Objects.equals(question, that.question) && Objects.equals(answer, that.answer);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(question, answer);
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "question='" + question + '\'' +
+                ", answer='" + answer + '\'' +
+                '}';
     }
 }
