@@ -1,39 +1,34 @@
 package com.questionAnswer.questionAnswerController;
 
-import com.questionAnswer.questionAnswerService.QuestionAnswerService;
+import com.questionAnswer.questionAnswerService.QuestionService;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.PostConstruct;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 
 @RestController
 @RequestMapping("/exam/java/")
 public class QuestionAnswerController {
-    private final QuestionAnswerService questionAnswerService;
+    private final QuestionService questionService;
 
-    public QuestionAnswerController(QuestionAnswerService questionAnswerService) {
-        this.questionAnswerService = questionAnswerService;
+    public QuestionAnswerController(QuestionService questionService) {
+        this.questionService = questionService;
     }
 
     @GetMapping("random/{count}")
     public String getRandomQuestion(@PathVariable("count") Integer count) {
-        return questionAnswerService.getRandomQuestion(count);
+        return questionService.getRandomQuestion(count);
     }
 
     @GetMapping("add")
     public String add(@RequestParam("question") String question, @RequestParam("answer") String answer) {
-        return questionAnswerService.add(question, answer);
+        return questionService.add(question, answer);
     }
 
     @GetMapping("remove")
     public String remove(@RequestParam("question") String question, @RequestParam("answer") String answer) {
-        return questionAnswerService.remove(question, answer);
+        return questionService.remove(question, answer);
     }
 
     @GetMapping
     public String getAllQuestion() {
-        return questionAnswerService.getAllQuestion();
+        return questionService.getAllQuestion();
     }
 }

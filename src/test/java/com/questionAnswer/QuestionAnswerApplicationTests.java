@@ -2,13 +2,12 @@ package com.questionAnswer;
 
 import com.questionAnswer.QuestionAnswerRep.QuestionAnswerRep;
 import com.questionAnswer.module.Question;
-import com.questionAnswer.questionAnswerService.QuestionAnswerServiceImpl;
+import com.questionAnswer.questionAnswerService.QuestionServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -20,7 +19,7 @@ class QuestionAnswerApplicationTests {
 	private QuestionAnswerRep questionAnswerRep;
 
 	@InjectMocks
-	private QuestionAnswerServiceImpl questionAnswerService;
+	private QuestionServiceImpl questionAnswerService;
 
 	Question question1 = new Question("Сколько на земле человек", "8 млрд");
 	Question question2 = new Question("Сколько на земле человек", "8 млрд");

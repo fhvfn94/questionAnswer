@@ -4,10 +4,10 @@ import com.questionAnswer.QuestionAnswerRep.QuestionAnswerRep;
 import org.springframework.stereotype.Service;
 
 @Service
-public class QuestionAnswerServiceImpl implements QuestionAnswerService {
+public class QuestionServiceImpl implements QuestionService {
     private final QuestionAnswerRep questionAnswerRep;
 
-    public QuestionAnswerServiceImpl(QuestionAnswerRep questionAnswerRep) {
+    public QuestionServiceImpl(QuestionAnswerRep questionAnswerRep) {
         this.questionAnswerRep = questionAnswerRep;
     }
     @Override
