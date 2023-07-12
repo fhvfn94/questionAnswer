@@ -31,8 +31,6 @@ public class QuestionAnswerRep {
             }
             index.add(num);
             l.add(list.get(num));
-
-
         }
         return l.toString();
     }
