@@ -1,0 +1,21 @@
+#работает
+GET http://localhost:8080/exam/java/
+##########
+
+
+
+#работает
+GET http://localhost:8080/exam/java/add/?question=Привет&answer=Мир
+##########
+
+#работает
+GET http://localhost:8080/exam/java/random/4
+##########
+
+#работает
+GET http://localhost:8080/exam/java/remove/?question=Привет&answer=Мир
+##########
+
+
+#работает
+GET http://localhost:8080/exam/java/
