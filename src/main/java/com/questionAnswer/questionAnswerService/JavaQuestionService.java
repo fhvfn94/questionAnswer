@@ -1,7 +1,10 @@
 package com.questionAnswer.questionAnswerService;
 
+import com.questionAnswer.module.Question;
 import com.questionAnswer.questionAnswerRep.QuestionAnswerRep;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class JavaQuestionService implements QuestionService {
@@ -24,7 +27,7 @@ public class JavaQuestionService implements QuestionService {
 
 
     @Override
-    public String getAllQuestion() {
+    public List<Question> getAllQuestion() {
         return questionAnswerRep.getAllQuestion();
     }
 

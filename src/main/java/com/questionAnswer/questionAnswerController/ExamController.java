@@ -1,5 +1,6 @@
 package com.questionAnswer.questionAnswerController;
 
+import com.questionAnswer.module.Question;
 import com.questionAnswer.questionAnswerService.ExaminerService;
 import com.questionAnswer.questionAnswerService.ExaminerServiceImpl;
 import com.questionAnswer.questionAnswerService.QuestionService;
@@ -15,8 +16,8 @@ public class ExamController {
     public ExamController(ExaminerService examinerService) {
         this.examinerService = examinerService;
     }
-    @GetMapping("random/{count}")
-    public String getRandomQuestion(@PathVariable("count") Integer count) {
-        return examinerService.getRandomQuestion(count);
+    @GetMapping("random/")
+    public Question getRandomQuestion() {
+        return examinerService.getRandomQuestion();
     }
 }

@@ -1,5 +1,6 @@
 package com.questionAnswer.questionAnswerService;
 
+import com.questionAnswer.module.Question;
 import com.questionAnswer.questionAnswerRep.QuestionAnswerRep;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ public class ExaminerServiceImpl implements ExaminerService {
         this.questionAnswerRep = questionAnswerRep;
     }
     @Override
-    public String getRandomQuestion(Integer count) {
-        return questionAnswerRep.getRandomQuestion(count);
+    public Question getRandomQuestion() {
+        return questionAnswerRep.getRandomQuestion();
     }
 }

@@ -1,5 +1,9 @@
 package com.questionAnswer.questionAnswerService;
 
+import com.questionAnswer.module.Question;
+
+import java.util.List;
+
 public interface QuestionService {
 
 
@@ -8,5 +12,5 @@ public interface QuestionService {
     String remove(String question, String answer);
 
 
-    String getAllQuestion();
+    List<Question> getAllQuestion();
 }

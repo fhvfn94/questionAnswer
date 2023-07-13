@@ -35,9 +35,9 @@ class QuestionAnswerApplicationTests {
 
 	@Test
 	public void getRandomQuestion() {
-		when(questionAnswerRep.getRandomQuestion(6))
-				.thenReturn("bad request");
-		String result = examinerService.getRandomQuestion(6);
+		when(questionAnswerRep.getRandomQuestion())
+				.thenReturn(new Question(question1.getQuestion(), question1.getAnswer()));
+		Question result = examinerService.getRandomQuestion();
 		assertEquals("bad request", result);
 	}
 

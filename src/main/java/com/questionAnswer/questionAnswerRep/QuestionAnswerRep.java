@@ -17,12 +17,11 @@ public class QuestionAnswerRep {
         list.add(new Question("Сколько на земле людей?", "8 млрд"));
     }
 
-    public String getRandomQuestion(Integer count) {
-        if (count > list.size()) {
-            return "bad request";
-        }
+    public Question getRandomQuestion() {
         Random random = new Random();
-        List<Question> l = new ArrayList<>(); //
+        int randomIndex = random.nextInt(list.size());
+        return list.get(randomIndex);
+        /*List<Question> l = new ArrayList<>(); //
         List<Integer> index = new ArrayList<>(); // index (2, 4)
         for (int i = 0; i < count; i++) {
             Integer num = random.nextInt(list.size()); // num = 2, 4
@@ -32,7 +31,7 @@ public class QuestionAnswerRep {
             index.add(num);
             l.add(list.get(num));
         }
-        return l.toString();
+        return l.toString();*/
     }
     public String add(String question, String answer) {
         if (!list.contains(new Question(question, answer))) {
@@ -50,8 +49,8 @@ public class QuestionAnswerRep {
         throw new IllegalArgumentException("Вопроса такого нет");
     }
 
-    public String getAllQuestion() {
-        return list.toString();
+    public List<Question> getAllQuestion() {
+        return list;
     }
 
 }
