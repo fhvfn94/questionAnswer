@@ -1,4 +1,4 @@
-package com.questionAnswer.QuestionAnswerRep;
+package com.questionAnswer.questionAnswerRep;
 import com.questionAnswer.module.Question;
 import org.springframework.stereotype.Repository;
 

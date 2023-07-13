@@ -1,18 +1,14 @@
 package com.questionAnswer.questionAnswerService;
 
-import com.questionAnswer.QuestionAnswerRep.QuestionAnswerRep;
+import com.questionAnswer.questionAnswerRep.QuestionAnswerRep;
 import org.springframework.stereotype.Service;
 
 @Service
-public class QuestionServiceImpl implements QuestionService {
+public class JavaQuestionService implements QuestionService {
     private final QuestionAnswerRep questionAnswerRep;
 
-    public QuestionServiceImpl(QuestionAnswerRep questionAnswerRep) {
+    public JavaQuestionService(QuestionAnswerRep questionAnswerRep) {
         this.questionAnswerRep = questionAnswerRep;
-    }
-    @Override
-    public String getRandomQuestion(Integer count) {
-        return questionAnswerRep.getRandomQuestion(count);
     }
 
     @Override

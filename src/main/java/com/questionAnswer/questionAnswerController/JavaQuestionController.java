@@ -5,17 +5,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/exam/java/")
-public class QuestionAnswerController {
+public class JavaQuestionController {
     private final QuestionService questionService;
 
-    public QuestionAnswerController(QuestionService questionService) {
+    public JavaQuestionController(QuestionService questionService) {
         this.questionService = questionService;
     }
 
-    @GetMapping("random/{count}")
-    public String getRandomQuestion(@PathVariable("count") Integer count) {
-        return questionService.getRandomQuestion(count);
-    }
+
 
     @GetMapping("add")
     public String add(@RequestParam("question") String question, @RequestParam("answer") String answer) {

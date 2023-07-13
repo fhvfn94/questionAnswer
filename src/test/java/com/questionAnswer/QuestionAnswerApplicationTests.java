@@ -1,8 +1,9 @@
 package com.questionAnswer;
 
-import com.questionAnswer.QuestionAnswerRep.QuestionAnswerRep;
+import com.questionAnswer.questionAnswerRep.QuestionAnswerRep;
 import com.questionAnswer.module.Question;
-import com.questionAnswer.questionAnswerService.QuestionServiceImpl;
+import com.questionAnswer.questionAnswerService.ExaminerService;
+import com.questionAnswer.questionAnswerService.JavaQuestionService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -19,7 +20,10 @@ class QuestionAnswerApplicationTests {
 	private QuestionAnswerRep questionAnswerRep;
 
 	@InjectMocks
-	private QuestionServiceImpl questionAnswerService;
+	private JavaQuestionService questionAnswerService;
+
+	@InjectMocks
+	private ExaminerService examinerService;
 
 	Question question1 = new Question("Сколько на земле человек", "8 млрд");
 	Question question2 = new Question("Сколько на земле человек", "8 млрд");
@@ -33,7 +37,7 @@ class QuestionAnswerApplicationTests {
 	public void getRandomQuestion() {
 		when(questionAnswerRep.getRandomQuestion(6))
 				.thenReturn("bad request");
-		String result = questionAnswerService.getRandomQuestion(6);
+		String result = examinerService.getRandomQuestion(6);
 		assertEquals("bad request", result);
 	}
 
